@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/HomeFragment">
+
+    <!--首页-->
+    <fragment
+            android:id="@+id/HomeFragment"
+            android:name="com.android.scrollconflictdemo.HomeFragment"
+            android:label="@string/first_fragment_label"
+            tools:layout="@layout/fragment_home">
+
+        <action
+                android:id="@+id/action_FirstFragment_to_ScrollListViewFragment"
+                app:destination="@id/ScrollViewAndListViewFragment" />
+
+        <action
+                android:id="@+id/action_FirstFragment_to_ScrollRecycleViewFragment"
+                app:destination="@id/ScrollRecycleViewFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/ScrollViewAndListViewFragment"
+            android:name="com.android.scrollconflictdemo.ScrollViewAndListViewFragment"
+            tools:layout="@layout/fragment_scroll_listview">
+
+        <action
+                android:id="@+id/action_SecondFragment_to_HomeFragment"
+                app:destination="@id/HomeFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/ScrollRecycleViewFragment"
+            android:name="com.android.scrollconflictdemo.ScrollViewAndRecycleViewFragment"
+            tools:layout="@layout/fragment_scroll_recycleview">
+
+        <action
+                android:id="@+id/action_SecondFragment_to_HomeFragment"
+                app:destination="@id/HomeFragment" />
+    </fragment>
+</navigation>
